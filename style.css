@@ -1,0 +1,8 @@
+.spoiler{
+    background-color: black;
+    color: black;
+    cursor: pointer;
+}
+.spoiler::selection{
+    color: rgba(0, 0, 0, 0);
+}
