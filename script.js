@@ -6,12 +6,11 @@ const listCheckbox = document.querySelectorAll('.form-check-input')
 const toutes = document.querySelector('.active')
 const aFaire = document.querySelector('.aFaire')
 const fait = document.querySelector('.fait')
-const jesuischiant = document.querySelector('#jesuischiant')
+const poubelle = document.querySelector('#jesuischiant')
 let pageEtat = document.querySelector('.btn-outline-primary').dataset.filter
 
 let todocount = 0
 let info = []
-
 
 function filter(etat) {
   const todolist = document.querySelectorAll('[data-etat]')
@@ -47,6 +46,7 @@ function radio(checkbox) {
     }
     filter(pageEtat)
   })
+
 }
 function AddATask(a) {
   todocount++
@@ -68,6 +68,7 @@ function AddATask(a) {
 
   NewLi.appendChild(NewInput)
   NewLi.appendChild(NewLabel)
+
   NewLabel.innerHTML = a
   const Label = document.createElement('label')
   Label.classList.add('ms-auto', 'btn', 'btn-danger', 'btn-sm')
@@ -104,14 +105,13 @@ function AddATask(a) {
 
     }
   }
-
   Label.appendChild(i)
   NewLi.appendChild(Label)
   ul.appendChild(NewLi)
   removeTrash(Label)
   radio(NewInput)
   filter(pageEtat)
-}
+}3
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -151,7 +151,3 @@ fait.addEventListener('click', function () {
 for (let checkbox of listCheckbox) {
   radio(checkbox)
 }
-
-
-// removeTrash(jesuischiant)
-// removeTrash(trash)
